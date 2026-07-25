@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="player">
+
+    <!-- Now playing header. Change the song title and artist to your pick. -->
+    <header class="now-playing">
+      <p class="eyebrow">Now playing</p>
+      <h1 class="song-title">Song title</h1>
+      <p class="artist">Artist name</p>
+    </header>
+
+    <!-- Toggle between the audio and the video. (This part already works.) -->
+    <div class="toggle" role="tablist">
+      <button type="button" class="toggle-btn is-active" data-view="audio">Audio</button>
+      <button type="button" class="toggle-btn" data-view="video">Video</button>
+    </div>
+
+    <!-- AUDIO view -->
+    <section class="view view-audio is-active">
+      <audio class="media" controls>
+        <!--
+          TODO: add your audio. Put a file in a media/ folder and point src at it,
+          e.g. <source src="media/my-song.mp3" type="audio/mpeg">
+          Supported types: .mp3 (audio/mpeg), .ogg (audio/ogg), .wav (audio/wav).
+        -->
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- VIDEO view -->
+    <section class="view view-video">
+      <video class="media" controls>
+        <!--
+          TODO: add your video. Point src at your file,
+          e.g. <source src="media/my-video.mp4" type="video/mp4">
+          Supported types: .mp4 (video/mp4), .webm (video/webm), .ogg (video/ogg).
+        -->
+        <source src="" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <!-- The lyrics. Write (or paste) the song's lyrics between the tags below. -->
+    <section class="lyrics-panel">
+      <h2>Lyrics</h2>
+      <p class="lyrics">
+        <!-- TODO: write the lyrics here, one line per line. -->
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
