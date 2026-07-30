@@ -3,61 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Music Player</title>
+
+  <title>Janice STFU | Music Player</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <main class="player">
 
-    <!-- Now playing header. Change the song title and artist to your pick. -->
+    <img
+      src="media/janice-stfu.jpg"
+      alt="Janice STFU song cover"
+      class="song-cover"
+    >
+
     <header class="now-playing">
-      <p class="eyebrow">Now playing</p>
-      <h1 class="song-title">Song title</h1>
-      <p class="artist">Artist name</p>
+      <p class="eyebrow">Now Playing</p>
+      <h1 class="song-title">Janice STFU</h1>
+      <p class="artist">Drake</p>
     </header>
 
-    <!-- Toggle between the audio and the video. (This part already works.) -->
-    <div class="toggle" role="tablist">
-      <button type="button" class="toggle-btn is-active" data-view="audio">Audio</button>
-      <button type="button" class="toggle-btn" data-view="video">Video</button>
+    <div class="toggle">
+      <button
+        type="button"
+        class="toggle-btn is-active"
+        data-view="audio"
+      >
+        Audio
+      </button>
+
+      <button
+        type="button"
+        class="toggle-btn"
+        data-view="video"
+      >
+        Video
+      </button>
     </div>
 
-    <!-- AUDIO view -->
     <section class="view view-audio is-active">
-      <audio class="media" controls>
-        <!--
-          TODO: add your audio. Put a file in a media/ folder and point src at it,
-          e.g. <source src="media/my-song.mp3" type="audio/mpeg">
-          Supported types: .mp3 (audio/mpeg), .ogg (audio/ogg), .wav (audio/wav).
-        -->
-        <source src="" type="audio/mpeg">
-        Your browser does not support the audio element.
+      <audio class="media audio-player" controls>
+        <source src="media/janice-stfu.mp3" type="audio/mpeg">
+
+        Your browser does not support audio.
       </audio>
     </section>
 
-    <!-- VIDEO view -->
     <section class="view view-video">
-      <video class="media" controls>
-        <!--
-          TODO: add your video. Point src at your file,
-          e.g. <source src="media/my-video.mp4" type="video/mp4">
-          Supported types: .mp4 (video/mp4), .webm (video/webm), .ogg (video/ogg).
-        -->
-        <source src="" type="video/mp4">
-        Your browser does not support the video element.
+      <video
+        class="media video-player"
+        controls
+        poster="media/janice-stfu.jpg"
+      >
+        <source src="media/janice-stfu.mp4" type="video/mp4">
+
+        Your browser does not support video.
       </video>
     </section>
 
-    <!-- The lyrics. Write (or paste) the song's lyrics between the tags below. -->
     <section class="lyrics-panel">
-      <h2>Lyrics</h2>
-      <p class="lyrics">
-        <!-- TODO: write the lyrics here, one line per line. -->
-      </p>
+
+      <div class="lyrics-heading">
+        <div>
+          <p class="lyrics-song">Janice STFU</p>
+          <h2>Lyrics</h2>
+        </div>
+
+        <span class="explicit">Explicit</span>
+      </div>
+
+      <div class="lyrics">
+
+        <p>
+          Emiliana, it's been so long since you texted me<br>
+          I finally took a break and now I feel like I'm on ecstasy<br>
+          You say what my work means to me will one day be the death of me<br>
+          They tried to kill me once, but, darling, you just resurrected me
+        </p>
+
+        <p>
+          Reach me, baby<br>
+          Call my phone and say you need me, baby<br>
+          I'm so green, you gotta teach me, baby<br>
+          From Vancouver, you a BC baby<br>
+          Pull up Maybach, beep-beep, baby<br>
+          And my shit came with the heat seats, baby<br>
+          Swear my label gotta free me, baby<br>
+          Blow on me just like some green tea, baby<br>
+          Ayy, ayy
+        </p>
+
+        <p>
+          Ayy, buried alive, someone come dig me up<br>
+          If I call up your shawty right now, she pickin' up, yeah<br>
+          You boys got big off my name, that's big enough<br>
+          We know how you OGs rockin' already, my nigga, the jig is up<br>
+          They say the truth will set you free, well, mine is gon' stream while you watch in HD<br>
+          They say that karma could take an eternity, yours is droppin' the same night as me<br>
+          Funny thing is that they ain't gon' compete, you gon' get yours while I'm doin' me<br>
+          You gon' get yours while I'm doin' me<br>
+          (Ayy, Janice, shut the fuck up)
+        </p>
+
+        <p>
+          Reach me, baby<br>
+          Call my phone and say you need me, baby<br>
+          Thought they had me in a deep sleep, baby<br>
+          I'm still scorchin' hot in these streets, baby<br>
+          Pull up Maybach, beep-beep, baby<br>
+          And my shit came with the heat seats, baby<br>
+          See-through shirt, I get a sneak peek, baby<br>
+          Blow on me just like some green tea, baby<br>
+          Ayy, ayy
+        </p>
+
+        <p>
+          Tired of all of y'all tellin' me niggas is real, pussy, I know when it's real<br>
+          You only come home to pose and pop off a look, but you forgot how it feel<br>
+          Chi-town, poppin' a pill, go on a drill, lookin' for someone to kill<br>
+          White kids listen to you 'cause they feel some guilt and that's how your soul gets fulfilled<br>
+          Handin' out turkeys on camera inside of your hood, then you go back to the hills<br>
+          How many houses you build? How many souls did you heal off the back of your deal?<br>
+          Difference between niggas gettin' you out of your deal and lettin' you out of your deal, damn<br>
+          Against your will, how many new names do you got on your will? Damn<br>
+          How many more times is y'all gon' keep callin' it soft when it's silk? Damn<br>
+          How many more interviews y'all gonna do just to get Ice to chill? Damn<br>
+          They tryna cover it up like a quilt<br>
+          'Rari go skrrt on a boy like a kilt<br>
+          Kept it a hundred on paper like Wilt<br>
+          Trickin' it off on her, payin' her bill<br>
+          That's just how I do the sauce and the spill<br>
+          These hoes know how I pop it for real<br>
+          These hoes know how I pop it for real, yeah<br>
+          Yeah, yeah<br>
+          I made way too much in a week<br>
+          Must be two hundred and fifty at least<br>
+          Like the money just grew off a tree<br>
+          Like the money just came in for free, for real, yeah<br>
+          MRI machine scannin' my knee<br>
+          Like how long you been runnin' the streets? For real, yeah<br>
+          She just text me, like, "Oui, oui, oui, oui"<br>
+          We in Paris like two hundred deep, for real<br>
+          And I went bought a whip for my brother<br>
+          Same body, but two different colors<br>
+          And I might just tell Kai get another<br>
+          Small price 'cause he kept it one hundred<br>
+          And I might book a flight out to London<br>
+          (Ayy, Janice, shut the fuck up)
+        </p>
+
+      </div>
+
     </section>
 
   </main>
 
   <script src="script.js"></script>
+
 </body>
 </html>

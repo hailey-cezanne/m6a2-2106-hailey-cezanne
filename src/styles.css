@@ -1,101 +1,305 @@
-/* Mini music player - a Spotify-style dark theme.
-   The styling is done for you. You add your media and lyrics in index.html. */
+:root {
+  --darkest: #020b07;
+  --background: #04170e;
+  --card: #0a2c1d;
+  --card-light: #10452e;
+  --green: #65e6a0;
+  --green-light: #baffd5;
+  --white: #ffffff;
+  --muted: #a8c9b6;
+  --border: rgba(186, 255, 213, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
   min-height: 100vh;
+  margin: 0;
+  padding: 40px 16px;
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: #121212;
-  color: #ffffff;
-  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  color: var(--white);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(70, 220, 140, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      var(--darkest),
+      var(--background)
+    );
+
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .player {
   width: 100%;
-  max-width: 440px;
-  margin: 40px 16px;
-  padding: 28px;
-  background: #181818;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  max-width: 540px;
+  padding: 24px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(10, 44, 29, 0.98),
+    rgba(4, 23, 14, 0.98)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(101, 230, 160, 0.1);
 }
 
-/* Now playing header */
+/* COVER */
+
+.song-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: block;
+  object-fit: cover;
+
+  margin-bottom: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* SONG DETAILS */
+
 .now-playing {
-  margin-bottom: 20px;
-}
-.eyebrow {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 0.7rem;
-  color: #b3b3b3;
-}
-.song-title {
-  margin: 4px 0 2px;
-  font-size: 1.6rem;
-}
-.artist {
-  margin: 0;
-  color: #b3b3b3;
+  margin-bottom: 22px;
 }
 
-/* Audio / Video toggle */
+.eyebrow {
+  margin: 0 0 6px;
+
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.song-title {
+  margin: 0;
+
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.artist {
+  margin: 9px 0 0;
+
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* TOGGLE */
+
 .toggle {
   display: flex;
-  gap: 8px;
-  background: #0d0d0d;
-  padding: 4px;
-  border-radius: 999px;
-  margin-bottom: 20px;
-}
-.toggle-btn {
-  flex: 1;
-  padding: 8px 0;
-  border: none;
-  border-radius: 999px;
-  background: transparent;
-  color: #b3b3b3;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.toggle-btn.is-active {
-  background: #1db954;
-  color: #000000;
+  gap: 6px;
+
+  margin-bottom: 18px;
+  padding: 5px;
+
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 14px;
 }
 
-/* Views: only the active one shows */
+.toggle-btn {
+  flex: 1;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: var(--muted);
+  background: transparent;
+
+  font: inherit;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.toggle-btn:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.toggle-btn.is-active {
+  color: #032014;
+  background: var(--green);
+
+  box-shadow: 0 6px 18px rgba(101, 230, 160, 0.25);
+}
+
+/* MEDIA */
+
 .view {
   display: none;
 }
+
 .view.is-active {
   display: block;
 }
+
 .media {
   width: 100%;
-  border-radius: 8px;
-}
-video.media {
-  background: #000000;
+  display: block;
+  border-radius: 14px;
 }
 
-/* Lyrics */
+.audio-player {
+  padding: 10px;
+  background: var(--green-light);
+}
+
+.video-player {
+  max-height: 420px;
+  background: #000000;
+  object-fit: contain;
+}
+
+/* LYRICS */
+
 .lyrics-panel {
-  margin-top: 24px;
-  border-top: 1px solid #2a2a2a;
-  padding-top: 16px;
+  margin-top: 26px;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--border);
 }
-.lyrics-panel h2 {
-  font-size: 1rem;
-  color: #b3b3b3;
-  margin: 0 0 8px;
+
+.lyrics-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 14px;
 }
-.lyrics {
+
+.lyrics-song {
+  margin: 0 0 4px;
+
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.lyrics-heading h2 {
   margin: 0;
-  white-space: pre-line;
-  line-height: 1.7;
-  color: #e6e6e6;
+  font-size: 1.7rem;
+}
+
+.explicit {
+  padding: 5px 8px;
+
+  color: var(--background);
+  background: var(--green-light);
+
+  border-radius: 5px;
+
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.lyrics {
+  max-height: 460px;
+  padding: 22px;
+
+  overflow-y: auto;
+
+  background: linear-gradient(
+    145deg,
+    rgba(101, 230, 160, 0.13),
+    rgba(0, 0, 0, 0.2)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.lyrics p {
+  margin: 0 0 30px;
+
+  color: #e9fff2;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.lyrics p:last-child {
+  margin-bottom: 0;
+}
+
+.lyrics::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lyrics::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lyrics::-webkit-scrollbar-thumb {
+  background: var(--card-light);
+  border-radius: 20px;
+}
+
+.lyrics::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  body {
+    padding: 18px 10px;
+  }
+
+  .player {
+    padding: 17px;
+    border-radius: 19px;
+  }
+
+  .song-cover {
+    border-radius: 14px;
+  }
+
+  .song-title {
+    letter-spacing: -1px;
+  }
+
+  .lyrics {
+    max-height: 370px;
+    padding: 17px;
+  }
+
+  .lyrics p {
+    font-size: 0.94rem;
+  }
 }
